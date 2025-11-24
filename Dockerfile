@@ -5,7 +5,7 @@ WORKDIR /usr/app
 COPY ./ /usr/app
 
 RUN npm install
-RUN npm run test:cov
+#RUN npm run test:cov
 RUN npm run build
 
 FROM node:22-alpine

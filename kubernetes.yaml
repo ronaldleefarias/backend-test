@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rfarias
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+
+  name: backend-devops-cm
+  namespace: rfarias
+data:
+  USERNAME: "cmd"
+  ENDPOINT: "http://api.google.com/v1"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-devops-sc
+  namespace: rfarias
+type: Opaque
+stringData:
+  APIKEY: "12345678abcde"
+---

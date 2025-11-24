@@ -38,9 +38,11 @@ pipeline {
             steps {
                 sh 'docker build -t backend-test-ronald .'
                 sh 'docker tag backend-test ronaldleefarias/backend-test-ronald'
+                sh "docker tag backend-test ronaldleefarias/backend-test-ronald:${env.BUILD_NUMBER}"
                 script {
                     docker.withRegistry("https://index.docker.io/v1/","id-credential-jenkins-ronald"){
                 sh 'docker push ronaldleefarias/backend-test-ronald'
+                sh "docker push ronaldleefarias/backend-test-ronald:${env.BUILD_NUMBER}"
                     }
                 }
             }

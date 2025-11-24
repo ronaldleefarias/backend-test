@@ -33,7 +33,9 @@ pipeline {
         }
         stage('build docker image'){
             steps {
-                sh 'docker build -t backend-test .'
+                sh 'docker build -t backend-test-ronald .'
+                sh 'docker tag backend-test ronaldleefarias/backend-test-ronald'
+                sh 'docker push ronaldleefarias/backend-test-ronald'
             }
         }
         stage('fin pipeline'){

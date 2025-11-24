@@ -25,10 +25,15 @@ pipeline {
                 sh 'npm run test:cov'
             }
         }
-                 stage('ejecutando build'){
+        stage('ejecutando build'){
             steps {
                 sh 'echo "haciendo build del codigo"'
                 sh 'npm run build'
+            }
+        }
+        stage('build docker image'){
+            steps {
+                sh 'docker build -t backend-test .'
             }
         }
         stage('fin pipeline'){

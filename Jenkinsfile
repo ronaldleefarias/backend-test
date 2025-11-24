@@ -36,7 +36,7 @@ pipeline {
 
         stage('build docker image'){
             steps {
-                sh 'docker build -t backend-test-ronald .'
+                sh 'docker build -t backend-test .'
                 sh 'docker tag backend-test ronaldleefarias/backend-test-ronald'
                 sh "docker tag backend-test ronaldleefarias/backend-test-ronald:${env.BUILD_NUMBER}"
                 script {

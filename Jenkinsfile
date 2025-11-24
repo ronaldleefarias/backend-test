@@ -4,6 +4,7 @@ pipeline {
             image "node:22"
         }
     }
+    option{
         timeout(time:1 , unit:'MINUTES')
     }
     stages{
@@ -24,4 +25,4 @@ pipeline {
             }
         }
     }
-
+}

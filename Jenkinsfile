@@ -21,7 +21,7 @@ pipeline {
         }
          stage('ejecutando test y coverage'){
             steps {
-                sh 'echo "haciendo testiong al codigo"'
+                sh 'echo "haciendo testing al codigo"'
                 sh 'npm run test:cov'
             }
         }
